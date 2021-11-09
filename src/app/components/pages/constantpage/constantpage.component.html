@@ -1,0 +1,304 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Constants</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;" (click)="gotohome()">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Constants</li>
+        </ol>
+    </div>
+     <!-- <div class="d-flex">
+        <div class="justify-content-center">
+            <button type="button" class="btn btn-white btn-icon-text my-2 ml-2">
+                Import<i class="fe fe-download ml-2"></i>
+            </button>
+            <button type="button" class="btn btn-white btn-icon-text my-2 ml-2">
+                Filter<i class="fe fe-filter ml-2"></i>
+            </button>
+            <button type="button" class="btn btn-primary my-2 btn-icon-text">
+                Download Report<i class="fe fe-download-cloud ml-2"></i>
+            </button>
+        </div> 
+    </div> -->
+</div>
+<!-- <ul class="nav nav-tabs2">
+        <li class="nav-item"><a class="btn cus" style="color: white;"(click)="gotoqualification()"  >Qualification</a></li>&nbsp;
+        <li class="nav-item"><a class="btn cus" style="color: white;"(click)="gotodoc()" >Document Type</a></li>                            
+    </ul> -->
+<mat-tab-group fxFill id="tab-group" class="new_css">
+    <mat-tab style="color:white;background-color: #6259CA;" label="Draw Time">
+
+        <div class="card card-aside custom-card">
+            <div class="card-body">
+
+                <div class="body">
+                    <!-- <label>Draw Type</label> -->
+                    <form action="" id="form_education" method="post" data-parsley-validate="" novalidate="">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="form-group">
+                                    <label>Draw Time</label>
+                                    <input type="time" class="form-control" id="edu_level" name="edu_level"
+                                        placeholder="Education Level" required="required">
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Company</label>
+                                <select class="custom-select" name="qua_edu_id" id="qua_edu_id" required="required">
+                                    <option value="">-- Company --</option>
+                                    <option value="2">Future Trend LLC</option><option value="10">Dev Test</option><option value="11">FT</option><option value="14">John</option><option value="28">FutureTrend</option><option value="29">Futuretrendest</option>                                                                            </select>
+                            </div>
+                        </div>  -->
+                            <!--<input type="hidden" value="1" id="qua_edu_id" name="qua_edu_id"> -->
+                            <div class="col-lg-2 col-md-4 col-sm-6">
+                                <label>&nbsp;</label>
+                                <button type="button" id="attendance_search" class="btn btn-sm btn-primary btn-block"
+                                    title="">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row row-sm" style="margin-top: 20px;">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+                <div class="card custom-card">
+                    <div class="card-header border-bottom-0 pb-0">
+                        <div class="d-flex justify-content-between">
+                            <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                            <div class="ml-auto float-right">
+                                <!-- <div ngbDropdown class="">
+                                        <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                                class="fe fe-more-horizontal"></i></a>
+                                        <div ngbDropdownMenu class="dropdown-menu-right">
+                                            <a ngbDropdownItem href="javascript:;">Today</a>
+                                            <a ngbDropdownItem href="javascript:;">Last Week</a>
+                                            <a ngbDropdownItem href="javascript:;">Last Month</a>
+                                            <a ngbDropdownItem href="javascript:;">Last Year</a>
+                                        </div>
+                                    </div> -->
+                            </div>
+                        </div>
+                        <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                                    more</a></p> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive border userlist-table">
+                            <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="wd-lg-8p"><span>User</span></th>
+                                        <th class="wd-lg-20p"><span>STATUS</span></th>
+                                        <th class="wd-lg-20p"><span>START TIME </span></th>
+                                        <th class="wd-lg-20p"><span>END TIME
+                                            </span></th>
+                                        <!-- <th class="wd-lg-20p"><span>Email</span></th>
+                                            <th class="wd-lg-20p">Action</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <!-- <td>
+                                                <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                                    src="../../assets/img/users/2.jpg">
+                                            </td> -->
+                                        <td>Draw#0</td>
+
+                                        <td>
+                                            <span class="text-success">Active</span>
+                                        </td>
+                                        <td>
+                                            Nov 28, 2021, 12:23:00 PM
+                                        </td>
+                                        <td>
+                                            Nov 29, 2021, 12:23:00 PM
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <!-- <td>
+                                                <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                                    src="../../assets/img/users/3.jpg">
+                                            </td> -->
+                                        <td>Draw#1 </td>
+
+                                        <td>
+                                            <span class="text-success">Active</span>
+                                        </td>
+                                        <td>
+                                            Nov 28, 2021, 12:23:00 PM </td>
+                                        <td>
+                                            Nov 29, 2021, 12:43:00 PM </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td> Draw#3</td>
+
+                                        <td>
+                                            <span class="text-success">Active</span>
+                                        </td>
+                                        <td>
+                                            Nov 23, 2021, 12:23:00 PM </td>
+
+                                        <td>
+                                            Nov 25, 2021, 12:43:00 PM </td>
+
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ul class="pagination mt-4 mb-0 float-right">
+                            <li class="page-item page-prev disabled">
+                                <a class="page-link" href="javascript:;" tabindex="-1">Prev</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="javascript:;">1</a></li>
+                            <!-- <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:;">5</a></li> -->
+                            <li class="page-item page-next">
+                                <a class="page-link" href="javascript:;">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- COL END -->
+        </div>
+
+    </mat-tab>
+    <br>
+    <mat-tab label="Draw Type">
+        <div class="card card-aside custom-card">
+            <div class="card-body">
+
+                <!-- <label>Draw Time</label> -->
+                <form action="" id="form_doc_type" method="post">
+                    <div class="row clearfix">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <label>Draw Type</label>
+                                <input type="text" class="form-control" id="doc_type" name="doc_type"
+                                    placeholder="Document Type" required="required">
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Company</label>
+                                                <select class="custom-select" name="doc_com_id" id="doc_com_id">
+                                                    <option value="">-- Company --</option>
+                                                    <option value="2">Future Trend LLC</option><option value="10">Dev Test</option><option value="11">FT</option><option value="14">John</option><option value="28">FutureTrend</option><option value="29">Futuretrendest</option><option value="32">ScottGew</option><option value="35">Williamtit</option><option value="36">Kevinicery</option><option value="37">GeorgeLak</option><option value="38">CharlesSek</option>                                                                            </select>
+                                            </div>
+                                        </div>     -->
+                        <!--<input type="hidden" value="1" id="doc_com_id" name=""> -->
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <label>&nbsp;</label>
+                            <button type="button" id="attendance_search" class="btn btn-sm btn-primary btn-block"
+                                title="">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive border userlist-table">
+                <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                    <thead>
+                        <tr>
+                            <th class="wd-lg-8p"><span>Draw Type</span></th>
+                            <th class="wd-lg-20p"><span>STATUS</span></th>
+                            <th class="wd-lg-20p"><span>Created </span></th>
+                            <th class="wd-lg-20p"><span>Action
+                                </span></th>
+                            <!-- <th class="wd-lg-20p"><span>Email</span></th>
+                                <th class="wd-lg-20p">Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <!-- <td>
+                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                        src="../../assets/img/users/2.jpg">
+                                </td> -->
+                            <td>Withdraw</td>
+
+                            <td>
+                                <span class="text-success">Active</span>
+                            </td>
+                            <td>
+                                Nov 28, 2021, 12:23:00 PM
+                            </td>
+                            <td>
+  <button  class="btn btn-sm btn-primary mr-1">
+                                        <i class="fe fe-edit"></i>
+                                    </button> 
+                                  <button class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i>
+                                    </button>  
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <!-- <td>
+                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                        src="../../assets/img/users/3.jpg">
+                                </td> -->
+                            <td>Add Cerdit </td>
+
+                            <td>
+                                <span class="text-success">Active</span>
+                            </td>
+                            <td>
+                                Nov 28, 2021, 12:23:00 PM </td>
+                            <td>
+ <button class="btn btn-sm btn-primary mr-1">
+                                        <i class="fe fe-edit"></i>
+                                    </button> 
+                                  <button class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i>
+                                    </button> 
+                        </tr>
+                        <tr>
+
+                            <td> Play backend</td>
+
+                            <td>
+                                <span class="text-success">Active</span>
+                            </td>
+                            <td>
+                                Nov 23, 2021, 12:23:00 PM </td>
+
+                            <td>
+                                 <button  class="btn btn-sm btn-primary mr-1">
+                                        <i class="fe fe-edit"></i>
+                                    </button> 
+                                  <button  class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i>
+                                    </button> </td>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="pagination mt-4 mb-0 float-right">
+                <li class="page-item page-prev disabled">
+                    <a class="page-link" href="javascript:;" tabindex="-1">Prev</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="javascript:;">1</a></li>
+                <!-- <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">4</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;">5</a></li> -->
+                <li class="page-item page-next">
+                    <a class="page-link" href="javascript:;">Next</a>
+                </li>
+            </ul>
+        </div>
+    </mat-tab>
+</mat-tab-group>

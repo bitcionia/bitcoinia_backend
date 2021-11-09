@@ -1,0 +1,87 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Add Backend</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item cus" (click)="user()">Backend</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Backend</li>
+
+
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+            <!-- <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+                <i class="fe fe-download mr-2"></i> Import
+            </button>-->
+            <!-- <button type="button" style="background-color: #6259CA;" class="btn btn-white btn-icon-text my-2 ml-2"
+                (click)="user()">
+                User List
+            </button>&nbsp;
+            <button type="button" class="btn btn-primary my-2 btn-icon-text" (click)="inactive()">
+                Inactive User
+            </button> -->
+        </div>
+    </div>
+</div>
+<div class="card card-aside custom-card">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                        <label>No
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group text-left">
+                    <input type="text" formControlName="no" class="form-control"value={{no}} [(ngModel)]="no" [ngClass]="{ 'is-invalid': submitted && loginFormControl.no.errors }" />
+                    <div *ngIf="submitted && loginFormControl.no.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.no.errors.required">No is required</div>
+                    </div>
+                    </div>                 
+                    <label>Content
+                        <span class="tx-danger">*</span>
+                    </label>
+                    <div class="form-group">
+                <input type="text" formControlName="content" class="form-control"value={{content}} [(ngModel)]="content" [ngClass]="{ 'is-invalid': submitted && loginFormControl.content.errors }" />
+                <div *ngIf="submitted && loginFormControl.content.errors" class="invalid-feedback">
+                    <div *ngIf="loginFormControl.content.errors.required">Content is required</div>
+                </div>
+                </div>
+                <label>Type
+                    <span class="tx-danger">*</span>
+                </label>
+                <div class="form-group">
+            <input type="text" formControlName="type" class="form-control" value={{type}} [(ngModel)]="type" [ngClass]="{ 'is-invalid': submitted && loginFormControl.type.errors }" />
+            <div *ngIf="submitted && loginFormControl.type.errors" class="invalid-feedback">
+                <div *ngIf="loginFormControl.type.errors.required">Type is required</div>
+            </div>
+            </div>
+           
+            <!-- <img width="100" height="80" [src]="image" class="image"> -->
+
+            <div class="form-group">
+                <label>Image
+                    <span class="tx-danger">*</span>
+    
+                </label>                <input 
+                    id="file" 
+                    type="file" 
+                    class="form-control"
+                    (change)="handleFileInput($event.target.files)">
+                    <!-- <div *ngIf="submitted && loginFormControl.file.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.file.errors.required">File is required.</div>
+                </div> -->
+            </div>
+            <img [src]="image" *ngIf="image" style="height: 30px; width:50px">
+
+                           
+                            <div class="modal-footer">
+                                <button class="btn ripple btn-primary" type="submit" >Save </button>
+                            </div>
+                
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+        
+

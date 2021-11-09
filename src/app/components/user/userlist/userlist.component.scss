@@ -1,0 +1,58 @@
+
+    .option-dots:hover {
+        background-color: #f0f0ff !important;
+    }
+    .dropdown-menu-right.dropdown-menu{
+        transform: translate(-120px , 40px) !important;
+        z-index: 9 !important;
+    }
+
+    .dropdown-menu{
+        z-index: 9 !important;
+    }
+    .btn {
+        background:#6259CA;
+        color: white;
+      }
+      .cus{
+        cursor: pointer !important;
+    }
+    // .my-pagination /deep/ .ngx-pagination .current {
+    //     background:#6259CA;
+    //   }
+    .ngx-pagination .current {
+        padding: 0.1875rem 0.625rem;
+        background: #6259CA !important;
+        color: #fefefe;
+        cursor: default;
+    }
+    .greenStatus {
+        color: green;
+    }
+    
+    .redStatus {
+        color: red;
+    }
+    .dot {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot-red {
+        background-color: red;
+      }
+      .dot-green {
+        background-color: green;
+      }
+      .dot-yellow {
+        background-color: yellow;
+      }
+      .sel{
+        width: 75%;
+        height: 38px;
+        border-radius: 8px;
+    }
+    .center{
+      text-align:center;
+  }

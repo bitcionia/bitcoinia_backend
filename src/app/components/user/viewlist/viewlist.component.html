@@ -1,0 +1,164 @@
+<!-- <div>
+    <button class="btn ripple btn-main-primary" style="float: right;" (click)="closeModelBox()">
+
+        <i class="fa fa-close"></i>
+
+    </button>
+</div> -->
+<div class="modal-header">
+    <label style="color: white;">View User</label>
+
+</div>
+
+                
+<div class="modal-body">
+                    <table class="table  text-nowrap text-md-nowrap table-striped mg-b-0">
+                        <!-- <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead> -->
+                        <tbody >
+                            <!-- <tr *ngFor="let data of defaultData">
+                                <th scope="row">{{data.id}}</th>
+                                <td>{{data.name}}</td>
+                                <td>{{data.position}}</td>
+                                <td>{{data.salary | currency:'USD':'symbol':'3.0-0'}}</td>
+                            </tr> -->
+                            <tr >
+                                <td>
+                                    First Name
+                                </td>
+                                <td>
+                                    {{firstname == "" ? 'NA': firstname}}
+                                </td>
+                            </tr> <tr >
+                                <td>
+                                Last Name
+                                </td>
+                                <td>
+                                    {{lastname == "" ? 'NA': lastname}}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                  User
+                                </td>
+                                <td>
+                                    {{User == "" ? 'NA': User}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  Email
+                                </td>
+                                <td>
+                                    {{Email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  Status
+                                </td>
+                                <td>
+                                    {{status > 0 ? 'Active':status}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                Mobile
+                                </td>
+                                <td>
+                                    {{mobile == null ? 'NA': mobile}}
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    Address
+                                    </td>
+                                    <td>
+                                       {{address== "" ? 'NA':address}}
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Address1
+                                            </td>
+                                            <td>
+                                               {{address1== "" ? 'NA':address1}}
+                                            </td>
+                                            </tr>
+                                    <tr>
+                                    <td>
+                                        Country
+                                        </td>
+                                        <td>
+                                           {{country == "" ? 'NA': country }}
+                                        </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    zip_code
+                                    </td>
+                                    <td>
+                                       {{zipcode}}
+                                    </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+  
+<!-- <div class="modal-body">
+    <div class="row clearfix">
+            <div class="card">
+                <div class="body">
+                    <table class="table table-hover table-striped mb-0">
+                        <tbody>
+                            <tr>
+                                <td><strong>Employee</strong></td>
+                                <td>Kabilan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Company</strong></td>
+                                <td>Dev Test</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leave Type</strong></td>
+                                <td>Annual</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Start Date</strong></td>
+                                <td>May, 02 2021</td>
+                            </tr>
+                            <tr>
+                                <td><strong>End Date</strong></td>
+                                <td>May, 02 2021</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Days</strong></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leave Reason</strong></td>
+                                <td>fever</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+       
+
+
+        <input type="hidden" name="id" value="26">
+    </div>
+</div> -->
+<div class="modal-footer">
+    <!-- <button class="btn ripple btn-primary" type="button" (click)="successAlert()">Save changes</button> -->
+    <button type="button" class="btn ripple btn-secondary" (click)="closeModelBox()">Close</button>
+</div>
+

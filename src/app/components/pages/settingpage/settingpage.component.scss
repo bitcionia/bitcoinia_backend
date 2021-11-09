@@ -1,0 +1,23 @@
+
+.user-lock .dropdown-menu{
+    transform: translate(0px, 21px) !important;
+}
+
+
+@media (max-width: 447px){
+    .btn-profile {
+    bottom: 429px;
+    }
+}
+
+    @media (max-width: 767px){
+    .profile-footer {
+        display: block !important;
+    }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}

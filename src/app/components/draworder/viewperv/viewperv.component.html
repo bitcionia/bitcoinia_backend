@@ -1,0 +1,254 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div>
+       <h2 class="main-content-title tx-24 mg-b-5">View Draw</h2>
+       <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;"(click)="gotoview()">Pervious Draw</a></li>
+           <li class="breadcrumb-item active main-content-title tx-24 mg-b-5" aria-current="page">{{name}} Draw</li> 
+       </ol>
+   </div>
+  <!-- <div class="d-flex">
+       <div class="justify-content-center">
+           <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+             <i class="fe fe-download mr-2"></i> Import
+           </button>
+           <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+             <i class="fe fe-filter mr-2"></i> Filter
+           </button>
+           <button type="button" class="btn btn-primary my-2 btn-icon-text">
+             <i class="fe fe-download-cloud mr-2"></i> Download Report
+           </button>
+       </div>
+   </div> -->
+</div> 
+<!-- End Page Header -->
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-order ">
+                    <label class="main-content-label mb-3 pt-1">New Users</label>
+                    <h2 class="text-left card-item-icon card-icon">
+                        <i class="mdi mdi-account-multiple icon-size float-right text-primary"></i><span
+                            class="font-weight-bold">{{count == null ? 0: count}}</span>
+                    </h2>
+                    <!-- <p class="mb-0 text-muted">Monthly users<span class="float-left">50%</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COL END -->
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Total Ticket Buy</label>
+                    <h2 class="text-left"><i class="mdi mdi-cube icon-size float-right text-primary"></i><span
+                            class="font-weight-bold">{{sell == "NaN" ? 0:sell }}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Income<span class="float-left">$7,893</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COL END -->
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Total Amount</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{sellcount == "NaN" ? 0: sellcount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">CLD Amount</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{cldamount == "NaN" ? 0: cldamount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row row-sm">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">First Price</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{firstamount == "NaN" ? 0: firstamount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Second Price</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{secondamount == "NaN" ? 0: secondamount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Thrid Price</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{thridamount == "NaN" ? 0: thridamount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Fourth Price</label>
+                    <h2 class="text-left"><i class="icon-size mdi mdi-poll-box   float-right text-primary"></i><span
+                            class="font-weight-bold">${{fourthamount == "NaN" ? 0: fourthamount}}</span></h2>
+                    <!-- <p class="mb-0 text-muted">Monthly Profit<span class="float-left">$4,678</span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- COL END -->
+    <!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-widget">
+                    <label class="main-content-label mb-3 pt-1">Total Sales</label>
+                    <h2 class="text-left"><i class="mdi mdi-cart icon-size float-right text-primary"></i><span
+                            class="font-weight-bold">46,486</span></h2>
+                    <p class="mb-0 text-muted">Monthly Sales<span class="float-left">3,756</span></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- COL END -->
+
+
+<div class="row row-sm  mt-lg-4">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+        <div class="card bg-primary custom-card card-box">
+            <div class="card-body p-4">
+                <label>Purchaser Name</label>
+                <input type="text"  [(ngModel)]="username" (ngModelChange)="searchuser()"class="form-control" placeholder="Enter the Purchaser Name " />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+        <div class="card custom-card">
+            <div class="card-header border-bottom-0 pb-0">
+                <div class="d-flex justify-content-between">
+                    <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                    <!-- <div class="ml-auto float-right">
+                        <div ngbDropdown class="">
+                            <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                    class="fe fe-more-horizontal"></i></a>
+                            <div ngbDropdownMenu class="dropdown-menu-right">
+                                <a ngbDropdownItem href="javascript:;">Today</a>
+                                <a ngbDropdownItem href="javascript:;">Last Week</a>
+                                <a ngbDropdownItem href="javascript:;">Last Month</a>
+                                <a ngbDropdownItem href="javascript:;">Last Year</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                        more</a></p> -->
+            </div>
+            <div class="card-body">
+                <div class="table-responsive border userlist-table" *ngIf="showDatafound">
+                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <th class="wd-lg-8p"><span>Draw ID</span></th>
+                                <th class="wd-lg-20p"><span>Purchaser Name</span></th>
+                                <th class="wd-lg-20p"><span>Winning Price</span></th>
+                                <!-- <th class="wd-lg-20p"><span>Status</span></th> -->
+                                <th class="wd-lg-20p">Sequence Number</th>
+                                <th class="wd-lg-20p"><span>created At</span></th>
+                                <!-- <th class="wd-lg-20p"><span>End Time</span></th> -->
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i = index; let item of data |filter:username |  paginate:{
+                                itemsPerPage: 10,
+                                 currentPage:page,
+                                totalitem:totalLength }">
+                                <!-- <tr *ngFor="let item of data "> -->
+                                <!-- <td>
+                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                        src="../../assets/img/users/1.jpg">
+                                </td> -->
+                                <td>Draw#{{i+1}}</td>
+                                <td>
+                                    {{item['user_id']['username']== null ? 'NA': item['user_id']['username']}}
+                                </td>
+                                                                <td>
+                                    {{item['winning_price']}}
+                                </td>
+                        
+                                <!-- <td >
+                                <span *ngIf="item['deleted'] === false"
+                                [class]="item['deleted'] === false ? 'text-warning' : item['deleted']=== true ? 'text-success':''">
+                                {{item['deleted'] === false ? 'Pending':item['deleted']}}</span>
+                                <span *ngIf="item['deleted'] === true"
+                                [class]="item['deleted'] === false ? 'text-warning' : item['deleted']=== true ? 'text-success':''">
+                                {{item['deleted'] === true ? 'Active':item['deleted']}}</span>
+                            </td> -->
+                        
+                               
+                                <td>
+                                    {{item['Sequence_number']}}
+                                </td>
+                                <td>
+                                    {{item['createdAt']| date :'medium'}}
+                                </td>
+                                <!-- <td>
+                                    {{item['draw_id']['end_time'] | date :'medium'}}
+                                </td> -->
+                                <td>
+                                    <!-- <button (click)="gotoview()" class="btn btn-sm btn-primary mr-1">
+                                        <i class="si si-eye"></i>
+                                    </button> -->
+                                    <!-- <button (click)="editsymbol(item)" class="btn btn-sm btn-info mr-1">
+                                        <i class="fe fe-edit-2"></i>
+                                    </button>
+                                    <button (click)="warningAlert(item)" class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i>
+                                    </button> -->
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+              
+                <pagination-controls class="pagination mt-4 mb-0 float-right page-item" (pageChange)="page = $event">
+                </pagination-controls>
+                <div class="center" *ngIf="!showDatafound">
+                    <span>NO DATA FOUND </span>
+                </div>
+            </div>
+        </div>
+    </div><!-- COL END -->
+</div>

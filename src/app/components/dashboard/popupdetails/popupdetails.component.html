@@ -1,0 +1,81 @@
+<!-- <div>
+    <button class="btn ripple btn-main-primary" style="float: right;" (click)="closeModelBox()">
+
+        <i class="fa fa-close"></i>
+
+    </button>
+</div> -->
+<div class="modal-header">
+    <label style="color: white;">View Transcations</label>
+
+</div>
+
+                
+<div class="modal-body">
+                    <table class="table  text-nowrap text-md-nowrap table-striped mg-b-0">
+                       
+                        <tbody >
+                          
+                            <tr >
+                                <td>
+                                    Symbol
+                                </td>
+                                <td>
+                                    {{symbol == "" ? 'NA': symbol}}
+                                </td>
+                            </tr> <tr >
+                                <td>
+                                    Coinname
+                                </td>
+                                <td>
+                                    {{coinname == "" ? 'NA': coinname}}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Date
+                                </td>
+                                <td>
+                                    {{date == " " ? 'NA': date | date :'mediumDate'}}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Amount
+                                </td>
+                                <td>
+                                    {{amount == "" ? 'NA': amount}}
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    Price
+                                </td>
+                                <td>
+                                    {{price_received == "" ? 'NA': price_received}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Status
+                                </td>
+                                <td>
+                                    <span *ngIf="status === 0"
+                                                [class]="status === 0 ? 'text-warning':''">
+                                                {{status === 0 ? 'Pending':status}}</span>
+                                                <span *ngIf="status === 1"
+                                                [class]="status === 1 ? 'text-danger' : ''">
+                                                {{status === 1 ? 'Active':status}}</span>
+                                </td>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                    
+                </div>
+
+<div class="modal-footer">
+    <!-- <button class="btn ripple btn-primary" type="button" (click)="successAlert()">Save changes</button> -->
+    <button type="button" class="btn ripple btn-secondary" (click)="closeModelBox()">Close</button>
+</div>
+

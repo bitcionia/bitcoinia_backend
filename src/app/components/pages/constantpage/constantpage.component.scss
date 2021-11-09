@@ -1,0 +1,54 @@
+
+    .option-dots:hover {
+        background-color: #f0f0ff !important;
+    }
+    .dropdown-menu-right.dropdown-menu{
+        transform: translate(-120px , 40px) !important;
+        z-index: 9 !important;
+    }
+
+    .dropdown-menu{
+        z-index: 9 !important;
+    }
+    .btn {
+        background:#6259CA;
+        color: white;
+      }
+      .cus{
+        cursor: pointer !important;
+    }
+    .example-button-toggle-label {
+        display: inline-block;
+        margin: 16px;
+      }
+
+.mat-ripple:not(:empty) {
+    transform: translateZ(0);
+}
+.mat-ripple:not(:empty) {
+    transform: translateZ(0);
+}
+.mat-ripple:not(:empty) {
+    transform: translateZ(0);
+}
+.mat-tab-label {
+    height: 48px;
+    padding: 0 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: .6;
+    min-width: 160px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+    background-color: #6259CA;
+    color: white;
+}
+.card-aside {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 20px;
+}

@@ -1,0 +1,160 @@
+<div class="page-header">
+    <div>
+       <h2 class="main-content-title tx-24 mg-b-5">Pending Transcation</h2>
+       <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="javascript:;"(click)="gotohome()"> Home </a></li>
+           <li class="breadcrumb-item active" aria-current="page"> Pending Transcation</li>
+       </ol>
+   </div>
+   <div class="d-flex">
+       <div class="justify-content-center">
+           <!-- <button type="button" class="btn btn-white btn-icon-text my-2 ml-2">
+                Import<i class="fe fe-download ml-2"></i>
+           </button>-->
+           <button type="button" class="btn btn-primary my-2 btn-icon-text"routerLink="/wallet/paytranscation">
+            Pay Transcation
+        </button>&nbsp;
+          <button type="button" class="btn btn-primary my-2 btn-icon-text"routerLink="/wallet/cancelpayment">
+             Cancel Transcation           </button>  &nbsp;
+             <button type="button" class="btn btn-primary my-2 btn-icon-text"routerLink="/pages/transpenpdf">
+                Download Report     <i class="fe fe-download ml-2"></i>      </button> 
+       </div>
+   </div>
+</div>
+
+<div class="row row-sm  mt-lg-4">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+        <div class="card bg-primary custom-card card-box">
+            <div class="card-body p-4">
+                <!-- <label>User Name</label>
+                <input type="text"  [(ngModel)]="username" (ngModelChange)="searchpayment()"class="form-control" placeholder="Enter the User Name" /> -->
+                <!-- <div class="row align-items-center"> -->
+                 <form [formGroup]="loginForm" (ngSubmit)="search()" novalidate>
+ 
+                     <div class="row">
+                         <div class="col-lg-4 col-md-4 col-sm-4">
+                           
+                             <div class="form-group text-left">
+                                 <label>Draw Name</label>
+                                 <input type="text" formControlName="drawname" class="form-control" [ngClass]="{ 'valid': submitted  }" />
+                              
+                         </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-4">
+                           
+                         <div class="form-group text-left">
+                             <label>Coin Name</label>
+                             <!-- <input type="text" formControlName="coinname" class="form-control" [ngClass]="{ 'valid': submitted  }" /> -->
+                             <select class="select form-control" formControlName="coinname">
+                                 <!-- placeholder="bitcoin" -->
+                             <option *ngFor="let bit of bitcoin">{{bit}}</option>
+                         </select>
+                     </div>
+                   </div>
+                         <div class="col-lg-4 col-md-4 col-sm-4">
+                             <div class="form-group">
+                                 <label>Symbol</label>
+                                 <select class="select form-control" formControlName="symbol">
+                                 <option *ngFor="let sym of Symbol">{{sym}}</option>
+                             </select>
+                                 
+                             </div>
+                         </div>
+                       
+                       
+                         </div>
+                     </form>
+                     <div class="col-sm-12 text-right m-t-20">
+                         <label>&nbsp;</label>
+                         <button type="submit"class="btn btn-primary" style="width: 8%;">Get</button>
+                     </div>
+             </div> 
+            <!-- </div> -->
+        </div>
+    </div>
+ </div>
+<div class="row row-sm">
+   <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+       <div class="card custom-card">
+           <div class="card-header border-bottom-0 pb-0">
+               <div class="d-flex justify-content-between">
+                   <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                   <!-- <div class="ml-auto float-right">
+                       <div ngbDropdown class="">
+                           <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                   class="fe fe-more-horizontal"></i></a>
+                           <div ngbDropdownMenu class="dropdown-menu-right">
+                               <a ngbDropdownItem href="javascript:;">Today</a>
+                               <a ngbDropdownItem href="javascript:;">Last Week</a>
+                               <a ngbDropdownItem href="javascript:;">Last Month</a>
+                               <a ngbDropdownItem href="javascript:;">Last Year</a>
+                           </div>
+                       </div>
+                   </div> -->
+               </div>
+               <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                       more</a></p> -->
+           </div>
+           <div class="card-body">
+               <div class="table-responsive border userlist-table" *ngIf="showDatafound">
+                   <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                       <thead>
+                           <tr>
+                            <th class="wd-lg-8p"><span> Draw Name</span></th>
+                            <th class="wd-lg-20p"><span>Coin Name</span></th>
+                               <th class="wd-lg-20p"><span>Symbol</span></th>
+                               <th class="wd-lg-20p"><span>Status</span></th>
+                               <th class="wd-lg-20p"><span>Amount</span></th>
+                               <th class="wd-lg-20p">Price Received</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr *ngFor="let item of data |filter: username|  paginate:{
+                               itemsPerPage: 10,
+                                currentPage:page,
+                               totalitem:totalLength }">
+                               <!-- <tr *ngFor="let item of data "> -->
+                               <!-- <td>
+                                   <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                       src="../../assets/img/users/1.jpg">
+                               </td> -->
+                               <td>{{item['drawname'] == "" ? 'NA': item['drawname']}} </td>
+                               <td>
+                                <!-- <img _ngcontent-fip-c139="" alt="" class="wd-30 ht-30 mr-3" src="../../assets/img/svgs/crypto-currencies/btc.svg"> -->
+                                   {{item['coinname'] == "" ? 'NA': item['coinname']}}
+                               </td>
+                               <!-- <td class="label text-success d-flex">
+                                            
+                                               {{item['status']> 0 ? 'Active':item['status']}}
+
+                                            </td> -->
+                                            <td>
+                                               {{item['symbol'] == "" ? 'NA': item['symbol']}}
+                                           </td>
+                               <td [ngClass]="item['status'] ? 'text-warning' : ''">
+                                   {{item['status'] > 0 ? 'Pending':item['status']}}
+                               </td>
+                               <td>
+                                   AED{{item['amount'] }}
+                               </td>
+                               <td>
+                                   AED{{item['price_received']}}
+                               </td>
+                               <td>
+                                  
+                               </td>
+                           </tr>
+
+                       </tbody>
+                   </table>
+               </div>
+               
+               <pagination-controls class="pagination mt-4 mb-0 float-right page-item" (pageChange)="page = $event">
+               </pagination-controls>
+               <div class="center" *ngIf="!showDatafound">
+                <span>NO DATA FOUND </span>
+            </div>
+           </div>
+       </div>
+   </div><!-- COL END -->
+</div>

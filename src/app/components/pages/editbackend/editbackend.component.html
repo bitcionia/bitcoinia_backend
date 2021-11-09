@@ -1,0 +1,137 @@
+<!-- <div>
+    <button class="btn ripple btn-main-primary" style="float: right;" (click)="closeModelBox()">
+
+        <i class="fa fa-close"></i>
+
+    </button>
+</div> -->
+<div class="modal-header">
+    <label>Update Backend</label>
+
+</div>
+<!-- <div class="modal-body">
+    <div class="row clearfix">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <table class="table table-hover table-striped mb-0">
+                        <tbody>
+                            <tr>
+                                <td><strong>Employee</strong></td>
+                                <td>Kabilan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Company</strong></td>
+                                <td>Dev Test</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leave Type</strong></td>
+                                <td>Annual</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Start Date</strong></td>
+                                <td>May, 02 2021</td>
+                            </tr>
+                            <tr>
+                                <td><strong>End Date</strong></td>
+                                <td>May, 02 2021</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total Days</strong></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Leave Reason</strong></td>
+                                <td>fever</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="body">
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="custom-select" name="status" id="status">
+                        <option value="1">Pending</option>
+                        <option selected="" value="2">Approved</option>
+                        <option value="3">Rejected</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Paid Status</label>
+                    <select class="custom-select" name="paid_status" id="paid_status">
+                        <option selected="" value="1">Paid</option>
+                        <option value="0">Unpaid</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Remarks</label>
+                    <textarea class="form-control" name="remarks" cols="15" rows="7" placeholder="Remarks">ok</textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" name="id" value="26">
+    </div>
+</div> -->
+
+            <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                        <label>No
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group text-left">
+                    <input type="text" formControlName="no" class="form-control"value={{no}} [(ngModel)]="no" [ngClass]="{ 'is-invalid': submitted && loginFormControl.no.errors }" />
+                    <div *ngIf="submitted && loginFormControl.no.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.no.errors.required">No is required</div>
+                    </div>
+                    </div>                 
+                    <label>Content
+                        <span class="tx-danger">*</span>
+                    </label>
+                    <div class="form-group">
+                <input type="text" formControlName="content" class="form-control"value={{content}} [(ngModel)]="content" [ngClass]="{ 'is-invalid': submitted && loginFormControl.content.errors }" />
+                <div *ngIf="submitted && loginFormControl.content.errors" class="invalid-feedback">
+                    <div *ngIf="loginFormControl.content.errors.required">Content is required</div>
+                </div>
+                </div>
+                <label>Type
+                    <span class="tx-danger">*</span>
+                </label>
+                <div class="form-group">
+            <input type="text" formControlName="type" class="form-control" value={{type}} [(ngModel)]="type" [ngClass]="{ 'is-invalid': submitted && loginFormControl.type.errors }" />
+            <div *ngIf="submitted && loginFormControl.type.errors" class="invalid-feedback">
+                <div *ngIf="loginFormControl.type.errors.required">First Name is required</div>
+            </div>
+            </div>
+           
+            <!-- <img width="100" height="80" [src]="image" class="image"> -->
+
+            <div class="form-group">
+                <label>Image
+                    <span class="tx-danger">*</span>
+    
+                </label>                <input 
+                    formControlName="file"
+                    id="file" 
+                    type="file" 
+                    class="form-control"
+                    (change)="onFileChange($event)">
+                <div *ngIf="loginFormControl.file.touched && loginFormControl.file.invalid" class="alert alert-danger">
+                    <div *ngIf="loginFormControl.file.errors.required">File is required.</div>
+                </div>
+            </div>
+            <img [src]="imageSrc" *ngIf="imageSrc" style="height: 30px; width:50px">
+
+                           
+                            <div class="modal-footer">
+                                <button class="btn ripple btn-primary" type="button" (click)="successAlert()">Save changes</button>
+                                <button type="button" class="btn ripple btn-secondary" (click)="closeModelBox()">Close</button>
+                            </div>
+                
+            </form>
+            </div>
+

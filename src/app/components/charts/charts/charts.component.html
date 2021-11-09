@@ -1,0 +1,92 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5 ">Welcome To Chart</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;"(click)="gotohome()">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chart</li>
+        </ol>
+    </div>
+      
+</div>
+
+
+<div class="row row-sm">
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-auto">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Total Wallet</h6>
+                    <p class="text-muted  card-sub-title">Below is the area chart with random data example.</p>
+                </div>
+                <div class="chartjs-wrapper-demo">
+                      <!-- <apx-chart [series]="RandomData.series" [chart]="RandomData.chart"
+                        [annotations]="RandomData.annotations" [colors]="RandomData.colors"
+                        [dataLabels]="RandomData.dataLabels" [markers]="RandomData.markers" [xaxis]="RandomData.xaxis"
+                        [tooltip]="RandomData.tooltip" [fill]="RandomData.fill"></apx-chart> -->
+                        <!-- <canvas #myCanvas id="canvas" baseChart [chartType]="chartType" [datasets]="chartData" [labels]="chartLabels" [colors]="chartColors" [options]="chartOptions"></canvas> -->
+                   <apx-chart [series]="apexData.series" [colors]="apexData.colors" [chart]="apexData.chart"
+                        [dataLabels]="apexData.dataLabels" [stroke]="apexData.stroke" [xaxis]="apexData.xaxis"
+                        [tooltip]="apexData.tooltip" [legend]="apexData.legend"></apx-chart>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-auto">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Draw wallet</h6>
+                    <p class="text-muted  card-sub-title">Below is the area chart example.</p>
+                </div>
+                <div class="chartjs-wrapper-demo">
+                    <!-- <apx-chart [series]="apexData.series" [colors]="apexData.colors" [chart]="apexData.chart"
+                        [dataLabels]="apexData.dataLabels" [stroke]="apexData.stroke" [xaxis]="apexData.xaxis"
+                        [tooltip]="apexData.tooltip" [legend]="apexData.legend"></apx-chart> -->
+                        <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [stroke]="chartOptions.stroke"
+    [tooltip]="chartOptions.tooltip"
+    [dataLabels]="chartOptions.dataLabels"
+    [colors]="chartOptions.colors"
+  ></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-sm">
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Distribution Wallet </h6>
+                    <p class="text-muted  card-sub-title">Below is the basic line chart example.</p>
+                </div>
+                <div  class="chartjs-wrapper-demo">
+                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+                    </canvas>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Cold Wallet</h6>
+                    <p class="text-muted  card-sub-title">Below is the basic bar chart example.</p>
+                </div>
+                <div class="chartjs-wrapper-demo">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType"
+                        [colors]="barChartColors">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

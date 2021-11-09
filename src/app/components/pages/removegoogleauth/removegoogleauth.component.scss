@@ -1,0 +1,91 @@
+::ng-deep {
+
+    @media (max-width:515px) {
+        aw-wizard-navigation-bar.horizontal ul.steps-indicator li a .label{
+            display:none;
+        }
+        aw-wizard-navigation-bar.horizontal ul.steps-indicator li.current a .label{
+            display:block;
+        }
+    }
+    @media (max-width:442px) {
+        aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li .step-indicator {
+            width: 30px;
+            height: 30px;
+            line-height: 25px;
+        }
+        aw-wizard-navigation-bar.horizontal ul.steps-indicator li.current a .label {
+            padding-top: 0;
+            white-space: nowrap;
+        }
+    }
+    @media (max-width:340px) {
+        #checkoutsteps .item .purchase{
+            margin-left: 3px
+        }
+    }
+}
+.css-gnqbje {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: block;
+}
+.css-1xv1r9q {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.css-1jfbp76 {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px;
+}
+.css-3nk5ev {
+    box-sizing: border-box;
+    margin: 0px 0px 0px 16px;
+    min-width: 0px;
+    display: flex;
+    flex: 1 1 0%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px;
+}
+.css-1pnngcv .bn-input-suffix {
+    flex-shrink: 0;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: 14px;
+}
+.css-vurnku {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+}
+.css-1mme6xj {
+    box-sizing: border-box;
+    margin: 0px 12px 0px 0px;
+    min-width: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    color: rgb(201, 148, 0);
+}

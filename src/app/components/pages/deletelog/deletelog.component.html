@@ -1,0 +1,60 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Delete Log</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;" (click)="gotohome()">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Delete Log</li>
+        </ol>
+    </div>
+
+    <div class="d-flex">
+        <div class="justify-content-center">
+            <!-- <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+              <i class="fe fe-download mr-2"></i> Import
+            </button>
+            <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+              <i class="fe fe-filter mr-2"></i> Filter
+            </button> -->
+            
+            <button type="button" class="btn btn-primary my-2 btn-icon-text" routerLink="/pages/getlog">
+                <i class="fa fa-page"></i> get Log
+            </button>
+        </div>
+    </div>
+
+</div>
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+        <div class="card custom-card">
+            <div class="card-header border-bottom-0 pb-0">
+                <div class="d-flex justify-content-between">
+                    <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                    <!-- <div class="ml-auto float-right">
+                        <div ngbDropdown class="">
+                            <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                    class="fe fe-more-horizontal"></i></a>
+                            <div ngbDropdownMenu class="dropdown-menu-right">
+                                <a ngbDropdownItem href="javascript:;">Today</a>
+                                <a ngbDropdownItem href="javascript:;">Last Week</a>
+                                <a ngbDropdownItem href="javascript:;">Last Month</a>
+                                <a ngbDropdownItem href="javascript:;">Last Year</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                        more</a></p> -->
+            </div>
+            <div class="card-body">
+                <div class="table-responsive border userlist-table" *ngIf="showDatafound">
+                 
+                </div>
+                <div class="center" *ngIf="!showDatafound">
+                    <span>NO DATA FOUND </span>
+                </div>
+                <!-- <pagination-controls class="pagination mt-4 mb-0 float-right page-item" (pageChange)="page = $event">
+                </pagination-controls> -->
+            </div>
+        </div>
+    </div><!-- COL END -->
+</div>

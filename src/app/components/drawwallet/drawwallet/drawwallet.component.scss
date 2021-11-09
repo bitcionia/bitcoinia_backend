@@ -1,0 +1,29 @@
+::ng-deep {
+    .btn-outline-primary {
+        color: #6259ca !important;
+        border-color: #6259ca !important;
+    }
+}
+.text-warning {
+    color: #ff9b21 !important;
+}
+.text-success {
+    color: #19b159 !important;
+}
+.center{
+    text-align: center;
+}
+mat-datepicker-toggle.popdatepmicker{ 
+    float: right !important;
+    // margin-right: -5% !important;
+    // width: 20% !important;
+    height: 20% !important;
+    margin-left: 40% !important;
+    margin-top: -22% !important;
+    align-items: center !important;
+    padding-bottom: -10px !important;
+    position: relative !important;
+}
+.disabled{
+    cursor: not-allowed !important;
+}

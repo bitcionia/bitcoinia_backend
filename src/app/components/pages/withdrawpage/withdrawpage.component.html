@@ -1,0 +1,166 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5 ">Withdraw</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;"(click)="gotohome()">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Withdraw</li>
+        </ol>
+    </div>
+    <div class="d-flex">
+         <div class="justify-content-center">
+            <!-- <button type="button" class="btn btn-white btn-icon-text my-2 ml-2">
+                 Import<i class="fe fe-download ml-2"></i>
+            </button>-->
+                 <button type="button" class="btn btn-primary my-2 btn-icon-text" (click)="add()">
+            Add Withdraw
+           </button>&nbsp;
+           <!-- <button type="button" class="btn btn-primary my-2 btn-icon-text"(click)="inactive()">
+             Inactive User
+           </button>  -->
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row row-sm  mt-lg-4">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+        <div class="card bg-primary custom-card card-box">
+            <div class="card-body p-4">
+                <label>Content</label>
+                <input type="text"  [(ngModel)]="username" (ngModelChange)="searchuser()"class="form-control" placeholder="Enter the User Name or Email" />
+               
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="card card-aside custom-card">
+    <div class="card-body">
+<div class="d-flex">
+    <form [formGroup]="loginForm" (ngSubmit)="searchuser()" novalidate>
+
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+              
+                <div class="form-group text-left">
+                    <label>User Name</label>
+                    <input type="text" formControlName="username" [(ngModel)]="username"class="form-control" [ngClass]="{ '': submitted && loginFormControl.username.errors }" />
+                 
+            </div>
+          </div>
+
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="form-group">
+                    <label>Email</label>
+                    <div class="form-group">
+                        <input type="text" formControlName="email" [(ngModel)]="email" class="form-control" [ngClass]="{ '': submitted && loginFormControl.email.errors }" />
+                       
+                        </div>
+                    
+                </div>
+            </div>
+
+          
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <label>&nbsp;</label>
+                <button type="submit"class="btn btn-sm btn-primary btn-block">Get</button>
+            </div>
+            </div>
+        </form>
+      
+</div>
+</div>
+</div> -->
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+        <div class="card custom-card">
+            <div class="card-header border-bottom-0 pb-0">
+                <div class="d-flex justify-content-between">
+                    <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                    <!-- <div class="ml-auto float-right">
+                        <div ngbDropdown class="">
+                            <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                    class="fe fe-more-horizontal"></i></a>
+                            <div ngbDropdownMenu class="dropdown-menu-right">
+                                <a ngbDropdownItem href="javascript:;">Today</a>
+                                <a ngbDropdownItem href="javascript:;">Last Week</a>
+                                <a ngbDropdownItem href="javascript:;">Last Month</a>
+                                <a ngbDropdownItem href="javascript:;">Last Year</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                        more</a></p> -->
+            </div>
+            <div class="card-body">
+                <div class="table-responsive border userlist-table" *ngIf="showDatafound">
+                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <th class="wd-lg-20p"><span>No</span></th>
+                                <!-- <th class="wd-lg-20p"><span></span></th> -->
+                                <th class="wd-lg-20p"><span>Content</span></th>
+                                <th class="wd-lg-20p"><span>Type</span></th>
+                                <th class="wd-lg-20p"><span>Status</span></th>
+                                <th class="wd-lg-20p"><span>Image</span></th>
+                                <th class="wd-lg-20p">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr *ngFor="let item of data |filter:username | paginate:{
+                                itemsPerPage: 10,
+                                 currentPage:p,
+                                 item:item,
+                                totalitem:totalLength }">	
+                          <!-- <tr *ngFor="let item of data "> -->
+                                <!-- <td>
+                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                        src="../../assets/img/users/1.jpg">
+                                </td> -->
+                                <td>{{item['no'] == "" ? 'NA': item['no']}} </td>
+                                <td>
+                                   {{item['content']}}
+                                </td>
+                                <td>{{item['type'] == "" ? 'NA': item['type']}} </td>
+
+                                <!-- <td class="label text-success d-flex">
+                                             
+                                                {{item['status']> 0 ? 'Active':item['status']}}
+
+                                             </td> -->
+                                             <td>
+                                                <span *ngIf="item['status'] === true"
+                                                [class]="item['status'] === true ? 'text-success':''">
+                                                {{item['status'] === true ? 'Active':item['status']}}</span>
+                                                <span *ngIf="item['status'] === false"
+                                                [class]="item['status'] === false ? 'text-danger' : ''">
+                                                {{item['status'] === false ? 'Inactive':item['status']}}</span>
+                                             </td>
+
+                                <td>
+                                    {{item['image'] == " " ? 'NA': item['image']}}       
+                                                         </td>
+                                <td>
+                                    <button (click)="addsymbol(item)" class="btn btn-sm btn-primary mr-1">
+                                        <i class="si si-eye"></i>
+                                    </button>
+                                    <button (click)="editsymbol(item)" class="btn btn-sm btn-info mr-1">
+                                        <i class="fe fe-edit-2"></i>
+                                    </button>
+                                    <button (click)="warningAlert(item)" class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i>
+                                    </button> 
+                                </td>
+                            </tr>
+       
+                        </tbody>
+                    </table>
+                </div>
+                <div class="center" *ngIf="!showDatafound">
+                    <span>NO DATA FOUND </span>
+                  </div>
+                <pagination-controls class="pagination mt-4 mb-0 float-right page-item" (pageChange)="p = $event"   item:item></pagination-controls>
+                
+            </div>
+        </div>
+    </div><!-- COL END -->
+</div>

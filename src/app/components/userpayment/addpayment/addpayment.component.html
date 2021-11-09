@@ -1,0 +1,204 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Add Deposit</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item cus"  routerLink="payment/depositpayment">Deposit Payment</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Deposit</li>
+
+
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+            <!-- <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+                <i class="fe fe-download mr-2"></i> Import
+            </button>
+            <button type="button" class="btn btn-white btn-icon-text my-2 mr-2">
+                <i class="fe fe-filter mr-2"></i> Filter
+            </button>
+            <button type="button" class="btn btn-primary my-2 btn-icon-text">
+                <i class="fe fe-download-cloud mr-2"></i> Download Report
+            </button> -->
+        </div>
+    </div>
+</div>
+<div class="card custom-card">
+    <div class="card-body">
+        <div class="container-fluid" >
+            
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                <div class="row">
+                   <!-- <div class="col-md-6 col-sm-12">
+                <label>Draw ID <span class="text-danger">*</span></label>
+                <div class="form-group ">
+                    <input type="text"formControlName="draw" [(ngModel)]="draw"
+                   class="form-control"disabled >
+                    </div>
+                        </div>  -->
+                    <div class="col-md-6 col-sm-12">
+                 
+        <label>Userid
+            <span class="tx-danger">*</span>
+        </label>
+        <div class="form-group" >
+        <input type="text" formControlName="userid" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && loginFormControl.userid.errors }" />
+        <div *ngIf="submitted && loginFormControl.userid.errors" class="invalid-feedback">
+            <div *ngIf="loginFormControl.userid.errors.required">userid is required</div>
+            <div *ngIf="loginFormControl.userid.errors.minlength">userid must be Entered</div>
+        </div>
+            </div>
+            </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> Tocoinaddress
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="number" formControlName="tocoinaddress" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.tocoinaddress.errors }" />
+                            <div *ngIf="submitted && loginFormControl.tocoinaddress.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.tocoinaddress.errors.required">tocoinaddress is required</div>
+                                <div *ngIf="loginFormControl.tocoinaddress.errors.minlength">tocoinaddress must be Entered</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> Fromcoinaddress
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="number" formControlName="fromcoinaddress" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.fromcoinaddress.errors }" />
+                            <div *ngIf="submitted && loginFormControl.fromcoinaddress.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.fromcoinaddress.errors.required">fromcoinaddress is required</div>
+                                <div *ngIf="loginFormControl.fromcoinaddress.errors.minlength">fromcoinaddress must be Entered</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> coinname
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <select class="select form-control" formControlName="coinname">
+                                <!-- placeholder="bitcoin" -->
+                            <option *ngFor="let bit of bitcoin">{{bit}}</option>
+                        </select>
+                            <div *ngIf="submitted && loginFormControl.coinname.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.coinname.errors.required">coinname is required</div>
+                                <div *ngIf="loginFormControl.coinname.errors.minlength">coinname must be Entered percentage</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> amount
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="number" formControlName="amount" class="form-control"[(ngModel)]="amount"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.amount.errors }"appPercentage />
+                            <div *ngIf="submitted && loginFormControl.amount.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.amount.errors.required">amount is required</div>
+                                <div *ngIf="loginFormControl.amount.errors.minlength">amount must be Entered percentage</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> pricereceived
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="number" formControlName="pricereceived" class="form-control"[(ngModel)]="pricereceived"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.pricereceived.errors }"appPercentage />
+                            <div *ngIf="submitted && loginFormControl.pricereceived.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.pricereceived.errors.required">pricereceived is required</div>
+                                <div *ngIf="loginFormControl.pricereceived.errors.minlength">pricereceived must be Entered percentage</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <label> symbol
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <select class="select form-control" formControlName="symbol">
+                                <!-- placeholder="symbol" -->
+                            <option *ngFor="let sym of Symbol">{{sym}}</option>
+                        </select>
+                            <div *ngIf="submitted && loginFormControl.symbol.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.symbol.errors.required">symbol is required</div>
+                                <div *ngIf="loginFormControl.symbol.errors.minlength">symbol must be Entered percentage</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-6 col-sm-12">
+
+                        <label>Start Time
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="datetime-local" formControlName="StartTime" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && loginFormControl.StartTime.errors }" />
+                            <div *ngIf="submitted && loginFormControl.StartTime.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.StartTime.errors.required">StartTime is required</div>
+                                <div *ngIf="loginFormControl.StartTime.errors.minlength">StartTime must be Entered</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>End time
+                            <span class="tx-danger">*</span>
+                        </label>
+                        <div class="form-group">
+                            <input type="datetime-local" formControlName="EndTime" class="form-control" 
+                            [ngClass]="{ 'is-invalid': submitted && loginFormControl.EndTime.errors}" />
+                            <div *ngIf="submitted && loginFormControl.EndTime.errors" class="invalid-feedback">
+                                <div *ngIf="loginFormControl.EndTime.errors.required">EndTime is required</div>
+                                <div *ngIf="loginFormControl.EndTime.errors.dateRangeValidator">EndTime must be Entered</div>
+                            </div> 
+
+                        </div>
+
+                        </div> -->
+
+                    
+
+                </div>
+
+                <div class="row1">
+                    <div class="col-sm-12 text-right m-t-20">
+                        <button type="submit"class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <div class="card-body mt-2 mb-2">
+    <form>
+        <div class="form-group text-left">
+            <label>Name</label>
+            <input class="form-control" placeholder="Enter your Name" type="text">
+        </div>
+        <div class="form-group text-left">
+            <label>Email</label>
+            <input class="form-control" placeholder="Enter your email" type="text">
+        </div>
+        <div class="custom-form">
+            <label class="Custom-label ">Phone No</label>
+            <input type="text" class="form-control Custom-input" formControlName="phoneno" placeholder="Enter Phone No">
+</div>
+
+
+    </form>
+    
+</div> -->

@@ -1,0 +1,199 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5"> Pervious Draw</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;" (click)="gotohome()">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pervious Draw</li>
+        </ol>
+    </div>
+
+    <div class="d-flex">
+        <div class="justify-content-center">
+          
+            <!-- <button type="button" class="btn btn-primary my-2 btn-icon-text" routerLink="/draworder/addperv">
+                <i class="fas fa-plus"></i> Add Draw
+            </button> -->
+            <button type="button" class="btn btn-primary my-2 btn-icon-text"routerLink="/pages/pervpdf">
+                Download Report<i class="fe fe-download-cloud ml-2"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<div class="row row-sm  mt-lg-4">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+        <div class="card bg-primary custom-card card-box">
+            <div class="card-body p-4">
+                <!-- <label>Draw Name </label>
+                <input type="text"  [(ngModel)]="username" (ngModelChange)="searchuser()"class="form-control" placeholder="Enter the Draw Name " /> -->
+                <!-- <div class="row align-items-center"> -->
+                    <form [formGroup]="loginForm" (ngSubmit)="search()" novalidate>
+
+                        <div class="row">
+                            <div class="col-sm-7 col-md-7 col-lg-3">
+                              
+                                <div class="form-group text-left">
+                                    <label>Draw Name</label>
+                                    <input type="text" formControlName="username" [(ngModel)]="username"class="form-control" [ngClass]="{ 'valid': submitted  }" />
+                                 
+                            </div>
+                          </div>
+                
+                            <div class="col-sm-7 col-md-7 col-lg-3">
+                                <label>Start Time
+                                </label>
+                                <div class="form-group" >
+                                    <input type="datetime-local"   formControlName="StartTime" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && loginFormControl.StartTime.errors }" />
+                                    <div *ngIf="submitted && loginFormControl.StartTime.errors" class="invalid-feedback">
+                                        <div *ngIf="loginFormControl.StartTime.errors.required">StartTime is required</div>
+                                        <div  *ngIf="loginForm.invalid">Please add a valid from and to date</div >
+                                        </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-sm-7 col-md-7 col-lg-3">
+                                <label>End time
+                                </label>
+                                <div class="form-group">
+                                    <input type="datetime-local" min ="StartTime.value"  formControlName="EndTime" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && loginFormControl.EndTime.errors}" />
+                                    <div *ngIf="submitted && loginFormControl.EndTime.errors" class="invalid-feedback">
+                                        <div *ngIf="loginFormControl.EndTime.errors.required">EndTime is required</div>
+                                        <div  *ngIf="loginForm.invalid">Please add a valid from and to date</div >
+                                    </div>  
+        
+                                </div>
+        
+                                </div>
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <label>&nbsp;</label>
+                                <button type="submit" style="height: 34px;"  class="btn btn-sm btn-primary btn-block disabled"  [disabled]="!loginForm.valid">Get</button>
+                            </div>
+                            </div>
+                        </form>
+                </div> 
+            <!-- </div> -->
+        </div>
+        
+    </div>
+</div>
+<!-- <div class="row row-sm  mt-lg-4">
+    <div class="col-sm-12 col-lg-12 col-xl-12">
+        <div class="card bg-primary custom-card card-box">
+            <div class="card-body p-4">
+                <label>Draw Name</label>
+                <input type="text"  [(ngModel)]="username" (ngModelChange)="searchuser()"class="form-control" placeholder="Enter the Draw Name " />
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+        <div class="card custom-card">
+            <div class="card-header border-bottom-0 pb-0">
+                <div class="d-flex justify-content-between">
+                    <!-- <label class="main-content-label mb-0 pt-1">User Table</label> -->
+                    <!-- <div class="ml-auto float-right">
+                        <div ngbDropdown class="">
+                            <a href="javascript:;" class="option-dots" ngbDropdownToggle><i
+                                    class="fe fe-more-horizontal"></i></a>
+                            <div ngbDropdownMenu class="dropdown-menu-right">
+                                <a ngbDropdownItem href="javascript:;">Today</a>
+                                <a ngbDropdownItem href="javascript:;">Last Week</a>
+                                <a ngbDropdownItem href="javascript:;">Last Month</a>
+                                <a ngbDropdownItem href="javascript:;">Last Year</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- <p class="tx-12 tx-gray-500 mt-0 mb-2">Example of Spruha Simple Table. <a href="javascript:;">Learn
+                        more</a></p> -->
+            </div>
+            <div class="card-body">
+                <div class="table-responsive border userlist-table" *ngIf="showDatafound">
+                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                        <thead>
+                            <tr>
+                                <th class="wd-lg-8p"><span> Draw Name</span></th>
+                                <!-- <th class="wd-lg-20p"><span></span></th> -->
+                                <th class="wd-lg-20p"><span>Winning Price</span></th>
+                                <th class="wd-lg-20p"><span>Price</span></th>
+                                <th class="wd-lg-20p"><span> Status</span></th>
+                                <!-- <th class="wd-lg-20p"><span> First Price</span></th> -->
+                                <th class="wd-lg-20p"><span>Start time</span></th>
+                                <th class="wd-lg-20p">End time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of drawlist |filter:username |  paginate:{
+                                itemsPerPage: 10,
+                                 currentPage:page,
+                                totalitem:totalLength }">
+                                <!-- <tr *ngFor="let item of data "> -->
+                                <!-- <td>
+                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                        src="../../assets/img/users/1.jpg">
+                                </td> -->
+                                <td>{{item['name'] == "" ? 'NA': item['name']}} </td>
+                                <td>
+                                    {{item['winning_price'] == null ? 0 : item['winning_price']}}
+                                </td>
+                                <td>
+                                    {{item['price']}}
+                                </td>
+                                <td >
+                                    <span *ngIf="item['status'] === true"
+                                   [class]="item['status'] === true ? 'text-danger':''">
+                                   {{item['status'] === true ? 'Inactive':item['status']}}</span>
+                                   <span *ngIf="item['status'] === false"
+                                   [class]="item['status'] === false ? 'text-success' : ''">
+                                   {{item['status'] === false ? 'Active':item['status']}}</span>
+                               </td> 
+                           
+                            <!-- <td>
+                                {{item['cold_wallet_percentage'] == null ? 'NA': item['cold_wallet_percentage']}}
+                            </td>
+                            <td>
+                                {{item['percentage_1'] == null ? 'NA': item['percentage_1']}}
+                            </td> -->
+                                <td>
+                                    {{item['start_time'] | date :'medium'}}
+                                </td>
+                                <td>
+                                    {{item['end_time']| date :'medium'}}
+                                </td>
+                                <td>
+                                    <button (click)="gotoview(item)" class="btn btn-sm btn-primary mr-1">
+                                        <i class="si si-eye"></i>
+                                    </button>
+                                    <!-- <button (click)="editsymbol(item)" class="btn btn-sm btn-info mr-1">
+                                        <i class="fe fe-edit-2"></i>
+                                    </button>
+                                    <span *ngIf="item['status'] === true">
+                                        <button (click)="warningAlert(item)" class="btn btn-sm btn-danger" disabled>
+                                            <i class="fe fe-trash"></i>
+                                        </button>
+                                    </span>
+                                    <span *ngIf="item['status'] === false">
+                                        <button (click)="warningAlert(item)" class="btn btn-sm btn-danger" >
+                                            <i class="fe fe-trash" ></i>
+                                        </button>
+                                    </span> -->
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+              
+                <pagination-controls class="pagination mt-4 mb-0 float-right page-item" (pageChange)="page = $event">
+                </pagination-controls>
+                <div class="sel" *ngIf="!showDatafound">
+                    <span>NO DATA FOUND </span>
+                </div>
+            </div>
+        </div>
+    </div><!-- COL END -->
+</div>

@@ -1,0 +1,217 @@
+<div class="page main-signin-wrapper">
+
+    <!-- Row -->
+    <div class="row signpages text-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="row row-sm">
+                    <div class="col-lg-6 col-xl-5 d-none d-lg-block text-center bg-primary details">
+                        <div class="mt-5 pt-4 p-2 pos-absolute">
+                            <img src="../../assets/img/brand/Bitconia white.png" class="header-brand-img mb-4" alt="logo">
+                            <div class="clearfix"></div>
+                            <!-- <img src="../../assets/img/svgs/user.svg" class="ht-100 mb-0" alt="user">-->
+                            <h5 class="mt-4 text-white">Create Your Account</h5>
+                            <span class="tx-white-6 tx-13 mb-5 mt-xl-0">Signup to create, discover and connect with
+                                the global community</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
+                        <div class="card-body">
+                    <mat-tab-group  >
+                        <mat-tab class="tab" style="color:white;" label="Email">
+                            <!-- <div class="row row-sm">
+                                <div class="card-body mt-2 mb-2">
+                                    <img src="../../assets/img/brand/Bitconia white.png"
+                                        class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo"> -->
+                                    <div class="clearfix"></div>
+                                    <br>
+                                    <br>
+                                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+                                      
+                                        <div class="form-group text-left">
+                                            <label>Email</label>
+                                            <input type="text" formControlName="email" placeholder ="Enter the Mail"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.email.errors }" />
+                                            <div *ngIf="submitted && loginFormControl.email.errors" class="invalid-feedback">
+                                                <div *ngIf="loginFormControl.email.errors.required">Email is required</div>
+                                                <div *ngIf="loginFormControl.email.errors.email">Email must be a valid email address</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-left">
+                                            <label>Password</label>
+                                            <input type="password" formControlName="password" placeholder ="Enter the Password"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.password.errors }" />
+                                            <div *ngIf="submitted && loginFormControl.password.errors" class="invalid-feedback">
+                                                <div *ngIf="loginFormControl.password.errors.required">Password is required</div>
+                                                <div *ngIf="loginFormControl.password.errors.minlength">Password must be at least 6 characters</div>
+                                            </div>
+                                        </div>
+                                        <button class="btn ripple btn-main-primary btn-block not-allowed" [disabled]="!loginForm.valid"
+                                            >Sign In</button>
+                                    </form>
+                                    <div class="text-left mt-5 ml-0">
+                                        <div class="mb-1"><a href="javascript:;" (click)="goToForgetPassword()">Forgot password?</a></div>
+                                    </div>
+                                <!-- </div>
+                            </div> -->
+                            </mat-tab> &nbsp;
+                            <mat-tab class="tab" label="Mobile">
+                                <!-- <div class="row row-sm">
+                                    <div class="card-body mt-2 mb-2">
+                                        <img src="../../assets/img/brand/Bitconia white.png"
+                                            class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo"> -->
+                                        <div class="clearfix"></div>
+                                        <br>
+                                        <br>
+                                        <form [formGroup]="mobileform" (ngSubmit)="mobilelogin()" novalidate>
+                                            
+                                           
+                            
+                                               
+                                                <div class="form-group text-left">
+                                                <label>Mobile
+                                                </label>
+                                                                     <div class="input-group">
+                                                                        <div class="input-group-prepend"><span>
+                                                                            <select class="select" formControlName="code"
+                                                                            [ngClass]="{ 'is-invalid': submitted && mobileFormControl.code.errors }">
+                                                                            <option>Code</option>
+                                                                            <option *ngFor="let con of Country">{{con['dial_code']}}({{con['code']}})</option>
+                                                                        </select></span>
+                                                                        </div>
+                                                    <input type="text" class="form-control" formControlName="mobile"
+                                                        [ngClass]="{ 'is-invalid': submitted && mobileFormControl.mobile.errors }" />
+                                                    <div *ngIf="submitted && mobileFormControl.mobile.errors" class="invalid-feedback">
+                                                        <div *ngIf="mobileFormControl.mobile.errors.required">mobile is required</div>
+                                                        <div *ngIf="mobileFormControl.mobile.errors.mobile">mobile must be a valid number
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            
+                                            
+                                            <div class="form-group text-left">
+                                                <label>Password</label>
+                                                <input type="password" formControlName="password" placeholder ="Enter the Password"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.password.errors }" />
+                                                <div *ngIf="submitted && loginFormControl.password.errors" class="invalid-feedback">
+                                                    <div *ngIf="loginFormControl.password.errors.required">Password is required</div>
+                                                    <div *ngIf="loginFormControl.password.errors.minlength">Password must be at least 6 characters</div>
+                                                </div>
+                                            </div>
+                                            <button class="btn ripple btn-main-primary btn-block not-allowed" [disabled]="!loginForm.valid"
+                                                >Sign In</button>
+                                        </form>
+                                        <div class="text-left mt-5 ml-0">
+                                            <div class="mb-1"><a href="javascript:;" (click)="goToForgetPassword()">Forgot password?</a></div>
+                                        </div>
+                                    <!-- </div>
+                                </div> -->
+                            </mat-tab>
+                            </mat-tab-group>
+                            </div>
+                            </div>
+                    
+        </div>
+    </div>
+    <!-- End Row -->
+
+</div>
+<!-- <div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
+    <div class="card-body">
+        <div class="profile-tab tab-menu-heading">
+            <ul ngbNav #nav="ngbNav" class="main-nav-line p-3 tabs-menu profile-nav-line bg-gray-100" [(activeId)]="active">
+            <li [ngbNavItem]="1" style="padding-left: 24%;">
+                <a href="javascript:;"ngbNavLink style="font-size: large;"><b>Email</b></a>
+                <ng-template ngbNavContent>
+    <div class="row row-sm">
+        <div class="card-body mt-2 mb-2">
+            <img src="../../assets/img/brand/Bitconia white.png"
+                class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
+            <div class="clearfix"></div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+              
+                <div class="form-group text-left">
+                    <label>Email</label>
+                    <input type="text" formControlName="email" placeholder ="Enter the Mail"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.email.errors }" />
+                    <div *ngIf="submitted && loginFormControl.email.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.email.errors.required">Email is required</div>
+                        <div *ngIf="loginFormControl.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+                <div class="form-group text-left">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" placeholder ="Enter the Password"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.password.errors }" />
+                    <div *ngIf="submitted && loginFormControl.password.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.password.errors.required">Password is required</div>
+                        <div *ngIf="loginFormControl.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <button class="btn ripple btn-main-primary btn-block not-allowed" [disabled]="!loginForm.valid"
+                    >Sign In</button>
+            </form>
+            <div class="text-left mt-5 ml-0">
+                <div class="mb-1"><a href="javascript:;" (click)="goToForgetPassword()">Forgot password?</a></div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+</li> &nbsp; &nbsp; <p style="margin-top: 3px;"><b>(OR)</b></p> &nbsp;&nbsp;  
+<li [ngbNavItem]="2">
+<a href="javascript:;" ngbNavLink style="font-size: large;"><b>Mobile</b></a>
+<ng-template ngbNavContent>
+    <div class="row row-sm">
+        <div class="card-body mt-2 mb-2">
+            <img src="../../assets/img/brand/Bitconia white.png"
+                class=" d-lg-none header-brand-img text-left float-left mb-4" alt="logo">
+            <div class="clearfix"></div>
+            <form [formGroup]="mobileform" (ngSubmit)="mobilelogin()" novalidate>
+                
+               
+
+                   
+                    <div class="form-group text-left">
+                    <label>Mobile
+                    </label>
+                                         <div class="input-group">
+                                            <div class="input-group-prepend"><span>
+                                                <select class="select" formControlName="code"
+                                                [ngClass]="{ 'is-invalid': submitted && mobileFormControl.code.errors }">
+                                                <option>Code</option>
+                                                <option *ngFor="let con of Country">{{con['dial_code']}}({{con['code']}})</option>
+                                            </select></span>
+                                            </div>
+                        <input type="text" class="form-control" formControlName="mobile"
+                            [ngClass]="{ 'is-invalid': submitted && mobileFormControl.mobile.errors }" />
+                        <div *ngIf="submitted && mobileFormControl.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="mobileFormControl.mobile.errors.required">mobile is required</div>
+                            <div *ngIf="mobileFormControl.mobile.errors.mobile">mobile must be a valid number
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                
+                
+                <div class="form-group text-left">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" placeholder ="Enter the Password"class="form-control" [ngClass]="{ 'is-invalid': submitted && loginFormControl.password.errors }" />
+                    <div *ngIf="submitted && loginFormControl.password.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.password.errors.required">Password is required</div>
+                        <div *ngIf="loginFormControl.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+                <button class="btn ripple btn-main-primary btn-block not-allowed" [disabled]="!loginForm.valid"
+                    >Sign In</button>
+            </form>
+            <div class="text-left mt-5 ml-0">
+                <div class="mb-1"><a href="javascript:;" (click)="goToForgetPassword()">Forgot password?</a></div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+</li>
+</ul>
+</div>
+<div class="tab-content">
+<div [ngbNavOutlet]="nav"></div>                            
+</div>
+
+</div>
+</div> -->

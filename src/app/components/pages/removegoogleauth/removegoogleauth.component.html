@@ -1,0 +1,162 @@
+<div class="page-header">
+    <div>
+       <h2 class="main-content-title tx-24 mg-b-5"> Remove Google Authenticator</h2>
+       <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="javascript:;" (click)="gotosec()">Security</a></li>
+           <li class="breadcrumb-item active" aria-current="page">Remove  Google Authenticator</li>
+       </ol>
+   </div>
+   <div class="d-flex">
+       <div class="justify-content-center">
+          <!-- <button type="button" class="btn btn-white btn-icon-text my-2 ml-2">
+               Import<i class="fe fe-download ml-2"></i>
+          </button>-->
+               <!-- <button type="button" class="btn btn-primary my-2 btn-icon-text" (click)="gotoadd()">
+          Add Wallet
+         </button>&nbsp; -->
+         <!-- <button type="button" class="btn btn-primary my-2 btn-icon-text"(click)="inactive()">
+           Inactive User
+         </button>  -->
+      </div>
+  </div>
+</div>
+
+
+
+<div class="row row-sm">
+    <div class="col-lg-12 col-md-12">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Google Authenticator</h6>
+                </div>
+                <div id="wizard2">
+                    <aw-wizard [navBarLayout]="'large-empty-symbols'">
+                       
+                        <aw-wizard-step stepTitle="Remove Google Authenticator" [navigationSymbol]="{ symbol: '1' }"
+                        >
+                        <div class="col-md-12">
+
+                                <h5 class="text-center pd-t-30">Remove Your Account</h5>
+
+                                
+                                        <div class="container-fluid">
+                                            <div class="row row-sm">
+                                                <div class="card-body mt-2 mb-2">
+                                                    <form  class="mt-5">
+                                                        
+                                                        <div class="form-group text-left">
+                                                            <label>E-mail 
+                                                            </label>
+                                                            <input class="form-control" placeholder="Enter your email" type="text"
+                                                                   value="admin@b*****nio.com"
+                                                                >
+                                                        </div>
+                                                        <!-- <div class="form-group text-left pd-t-30">
+                                                            <label>Authenticator Code
+                                                            </label>
+                                                            <input class="form-control"
+                                                                type="number" placeholder="AuthenticatorCode"  formControlName="AuthenticatorCode">
+                                                                <span>Enter the 6-digit code from Google Authenticator
+                            
+                                                                </span>
+                                                          
+                                                        </div> -->
+                                                        <br>
+                                                        <button class="btn btn-primary pull-right" type="button"awNextStep
+                                                        >Next</button>
+                                                    <button class="btn btn-secondary pull-right mr-1" type="button"
+                                                        awPreviousStep>Previous</button>
+                                                    </form>
+                                                   
+                                                </div>
+                                            </div>
+                                </div>
+                            </div>
+                        
+                     
+                       
+                       
+                    </aw-wizard-step>
+                    <aw-wizard-completion-step stepTitle="Verification Email" [navigationSymbol]="{ symbol: '2' }"
+                    awEnableBackLinks>
+                    <div class="col-md-12">
+
+                            <h5 class="text-center pd-t-30">Verification Your Account</h5>
+
+                            
+                                    <div class="container-fluid">
+                                        <div class="row row-sm">
+                                            <div class="card-body mt-2 mb-2">
+                                                <form [formGroup]="otpForm" class="mt-5">
+                                                    
+                                                    <div class="form-group text-left">
+                                                        <label>E-mail verification code
+                                                        </label>
+                                                        <!-- <input class="form-control" placeholder="Enter your email" type="text"
+                                                            placeholder="mail verification code"  formControlName="email" value="admin@b*****nio.com"
+                                                            > -->
+                                                            <otp [setting]="settings" (onValueChange)="onInputChange($event)"></otp>
+
+                                                            <!-- <span >Enter the 6 digit code received by admin@b*****nio.com.
+                                                            </span> -->
+                                                     
+                                                
+                                                    </div>
+                                                     <div class="form-group text-left pd-t-30">
+                                                        <label>Authenticator Code
+                                                        </label>
+                                                        <input class="form-control"
+                                                            type="number" placeholder="AuthenticatorCode"  formControlName="AuthenticatorCode">
+                                                            <span>Enter the 6-digit code from Google Authenticator
+                        
+                                                            </span>
+                                                      
+                                                    </div> 
+                                                    <br>
+                                                    <button class="btn btn-success pull-right" type="button"awNextStep
+                                                     >Next</button>
+                                                <button class="btn btn-secondary pull-right mr-1" type="button"
+                                                    awPreviousStep>Previous</button>
+                                                </form>
+                                               
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    
+                 
+                   
+                   
+                </aw-wizard-completion-step>
+                        <aw-wizard-completion-step  stepTitle="Finished" [navigationSymbol]="{ symbol: '3' }"
+                            awEnableBackLinks>
+
+                            <form class="mt-5">
+                                <div class="text-center">
+                                    <div class="">
+                                        <h5 class="mb-4">Authenticator Enabled</h5>
+                                    </div>
+                                    <svg class="wd-100 ht-100 mx-auto mb-3" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                                        <circle class="path circle" fill="none" stroke="#73AF55"
+                                            stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1"
+                                            r="62.1" />
+                                        <polyline class="path check" fill="none" stroke="#73AF55"
+                                            stroke-width="6" stroke-linecap="round" stroke-miterlimit="10"
+                                            points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+                                    </svg>
+                                    <p class="success pl-5 pr-5">Oou have successfully enabled Authenticator to protect your account.</p>
+                                </div>
+                                <button type="button" class="btn btn-primary pull-right" (click)="gotosec()">Security
+                                    </button>
+                                <!-- <button class="btn btn-secondary pull-right mr-1" type="button"
+                                    awPreviousStep>Previous</button> -->
+                            </form>
+                        </aw-wizard-completion-step>
+                    </aw-wizard>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

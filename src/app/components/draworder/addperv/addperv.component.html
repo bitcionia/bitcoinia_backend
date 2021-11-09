@@ -1,0 +1,104 @@
+<!-- <div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Add Draw</h2>
+        <ol class="breadcrumb">
+            <li  class ="breadcrumb-item cus"(click)=" gotopervdraw()">Draw Wallet</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Draw</li>
+
+
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+      
+        </div>
+    </div>
+</div>
+<div class="card custom-card">
+ <div class="card-body">
+    <div class="container-fluid">
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>  
+                  <div class="row">
+            <div class="col-md-6 col-sm-12">
+                    <label>Name <span
+                            class="text-danger">*</span></label>
+                            <div class="form-group">
+                                <input type="text" formControlName="username" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && loginFormControl.username.errors }" />
+                                <div *ngIf="submitted && loginFormControl.username.errors" class="invalid-feedback">
+                                    <div *ngIf="loginFormControl.username.errors.required">First Name is required</div>
+                                </div>
+                            </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                
+        <label>Winning Price
+            <span class="tx-danger">*</span>
+        </label>
+        <div class="form-group">
+        <input type="number" formControlName="winningprice" class="form-control" value={{winningprice}}
+            [(ngModel)]="winningprice"
+            [ngClass]="{ 'is-invalid': submitted && loginFormControl.winningprice.errors }" />
+        <div *ngIf="submitted && loginFormControl.winningprice.errors" class="invalid-feedback">
+            <div *ngIf="loginFormControl.winningprice.errors.required">winningprice is required</div>
+            <div *ngIf="loginFormControl.winningprice.errors.minlength">winningprice must be Entered</div>
+        </div>
+            </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                
+                <label> Price
+                    <span class="tx-danger">*</span>
+                </label>
+                <div class="form-group">
+                <input type="n" formControlName="price" class="form-control" value={{price}}
+                    [(ngModel)]="price"
+                    [ngClass]="{ 'is-invalid': submitted && loginFormControl.winningprice.errors }" />
+                <div *ngIf="submitted && loginFormControl.winningprice.errors" class="invalid-feedback">
+                    <div *ngIf="loginFormControl.winningprice.errors.required">Price is required</div>
+                    <div *ngIf="loginFormControl.winningprice.errors.minlength">Price must be Entered</div>
+                </div>
+                    </div>
+                    </div>
+            <div class="col-md-6 col-sm-12">
+               
+                    <label>Start Time
+                        <span class="tx-danger">*</span>
+                    </label>
+                    <div class="form-group">
+                    <input type="datetime-local" formControlName="StartTime" class="form-control" value={{StartTime}} [(ngModel)]="StartTime"
+                        [ngClass]="{ 'is-invalid': submitted && loginFormControl.StartTime.errors }" />
+                    <div *ngIf="submitted && loginFormControl.StartTime.errors" class="invalid-feedback">
+                        <div *ngIf="loginFormControl.StartTime.errors.required">StartTime is required</div>
+                        <div *ngIf="loginFormControl.StartTime.errors.minlength">StartTime must be Entered</div>
+                    </div>
+            </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label>End time
+                    <span class="tx-danger">*</span>
+                </label>
+                <div class="form-group">
+
+                <input type="datetime-local" formControlName="EndTime" class="form-control" value={{EndTime}} [(ngModel)]="EndTime"
+                    [ngClass]="{ 'is-invalid': submitted && loginFormControl.EndTime.errors }" />
+                <div *ngIf="submitted && loginFormControl.EndTime.errors" class="invalid-feedback">
+                    <div *ngIf="loginFormControl.EndTime.errors.required">EndTime is required</div>
+                    <div *ngIf="loginFormControl.EndTime.errors.minlength">EndTime must be Entered</div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        
+        <div class="row1">
+            <div class="col-sm-12 text-right m-t-20">
+                <button type="submit" id="system_submit"
+                    class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div> 
+</div>
+</div> -->

@@ -1,0 +1,105 @@
+<!-- Page Header -->
+ <div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Pervious Draw List
+</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;" routerLink="/draworder/draworderpage">Pervious Draw</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pervious Draw List
+</li>
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+            
+           <button type="button" class="btn ripple btn-secondary mb-1 mr-1" (click)="openPDF()"><i class="fe fe-arrow-down-circle mr-1"></i> Download</button>
+                <button type="button" class="btn ripple btn-info mb-1" onclick="javascript:window.print();"><i class="fe fe-printer mr-1"></i> Print </button>
+           
+        </div>
+    </div>
+</div> 
+<!-- End Page Header -->
+
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12 col-md-12">
+        <div class="card custom-card"id="htmlData">
+            <div class="card-body" >
+                <div class="d-lg-flex">
+                    <h2 class="main-content-label mb-1">Pervious Draw List</h2>
+                    <div class="ml-auto">
+                        <p class="mb-1"><span class="font-weight-bold">Start Date :</span> 01st November 2020</p>
+                        <p class="mb-0"><span class="font-weight-bold">End Date :</span> 01 May  2020</p>
+                    </div>
+                </div>
+                <div class="row row-sm">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <div class="table-responsive border userlist-table">
+                                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="wd-lg-8p"><span> Draw Name</span></th>
+                                                <!-- <th class="wd-lg-20p"><span></span></th> -->
+                                                <th class="wd-lg-20p"><span>Winning Price</span></th>
+                                                <th class="wd-lg-20p"><span>Price</span></th>
+                                                <th class="wd-lg-20p"><span> Status</span></th>
+                                                <!-- <th class="wd-lg-20p"><span> First Price</span></th> -->
+                                                <th class="wd-lg-20p"><span>Start time</span></th>
+                                                <th class="wd-lg-20p">End time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of pervdrawdata">
+                                                <!-- <tr *ngFor="let item of data "> -->
+                                                <!-- <td>
+                                                    <img alt="avatar" class="rounded-circle avatar-md mr-2"
+                                                        src="../../assets/img/users/1.jpg">
+                                                </td> -->
+                                                <td>{{item['name'] == "" ? 'NA': item['name']}} </td>
+                                                <td>
+                                                    {{item['winning_price'] == null ? 0 : item['winning_price']}}
+                                                </td>
+                                                <td>
+                                                    {{item['price']}}
+                                                </td>
+                                                <td >
+                                                    <span *ngIf="item['status'] === true"
+                                                   [class]="item['status'] === true ? 'text-danger':''">
+                                                   {{item['status'] === true ? 'Inactive':item['status']}}</span>
+                                                   <span *ngIf="item['status'] === false"
+                                                   [class]="item['status'] === false ? 'text-success' : ''">
+                                                   {{item['status'] === false ? 'Active':item['status']}}</span>
+                                               </td> 
+                                           
+                                            <!-- <td>
+                                                {{item['cold_wallet_percentage'] == null ? 'NA': item['cold_wallet_percentage']}}
+                                            </td>
+                                            <td>
+                                                {{item['percentage_1'] == null ? 'NA': item['percentage_1']}}
+                                            </td> -->
+                                                <td>
+                                                    {{item['start_time'] | date :'medium'}}
+                                                </td>
+                                                <td>
+                                                    {{item['end_time']| date :'medium'}}
+                                                </td>
+                                                
+                                            </tr>
+                
+                                        </tbody>
+                                    </table>
+                                </div>
+                              
+                               
+                            </div>
+                        </div>
+                    </div><!-- COL END -->
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- End Row -->
