@@ -41,7 +41,7 @@ import { DeletelogComponent } from './deletelog/deletelog.component';
 import { CreatewithdrawComponent } from './createwithdraw/createwithdraw.component';
 import { ViewwithdrawComponent } from './viewwithdraw/viewwithdraw.component';
 import { EditwithdrawComponent } from './editwithdraw/editwithdraw.component';
-import { OrderModule } from 'ngx-order-pipe';
+// import { OrderModule } from 'ngx-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -77,7 +77,7 @@ import { TranscationcanPdfComponent } from './transcationcan-pdf/transcationcan-
     PageMsgRoutingModule,
     NgbModule,
     Ng2SearchPipeModule,
-    OrderModule,
+    // OrderModule,
     ArchwizardModule,
     ClipboardModule,
     NgxPaginationModule,

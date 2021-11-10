@@ -50,7 +50,7 @@ import { AddwalletComponent } from './addwallet/addwallet.component';
     NgxPaginationModule,
     NgxIntlTelInputModule,
     Ng2SearchPipeModule,
-    OrderModule,
+    // OrderModule,
     CarouselModule,
     MatDialogModule,
     ToastrModule.forRoot(

@@ -4,7 +4,7 @@ import { PaymentTranscationComponent } from './payment-transcation/payment-trans
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { OrderModule } from 'ngx-order-pipe';
+// import { OrderModule } from 'ngx-order-pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PaymentTranscationModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    OrderModule,
+    // OrderModule,
     FormsModule,
     ReactiveFormsModule,
   ],
